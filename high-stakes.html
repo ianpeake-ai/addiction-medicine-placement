@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Stakes — Addiction Medicine Placement Companion, Glasgow</title>
+    <meta name="description" content="A companion to precarity, trauma, complexity and harm reduction for medical students on placement in addiction medicine, Glasgow.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* NHSGGC Navy */
+            --navy:        #003087;
+            --navy-mid:    #004aad;
+            /* NHSGGC Clyde Blue */
+            --clyde:       #0072ce;
+            --clyde-light: #4fa8e8;
+            /* HSCP Teal */
+            --teal:        #7fd4d4;
+            --teal-light:  #b8e8e8;
+            --teal-deep:   #4ab5b5;
+            /* HSCP Purple */
+            --purple:      #5b3a8c;
+            --purple-light:#8b6abf;
+            /* Neutrals */
+            --white:       #ffffff;
+            --off-white:   #f7f9fb;
+            --light-grey:  #eef2f6;
+            --mid-grey:    #d0dae6;
+            --text:        #1a2a3a;
+            --text-mid:    #3a4a5a;
+            --text-light:  #6a7a8a;
+            /* Semantic */
+            --link:        var(--clyde);
+            --accent:      var(--purple);
+            --section-a:   #e8f4fb;
+            --section-b:   #f0eaf8;
+            --section-c:   #e6f4f0;
+            --section-d:   #fef6e6;
+            --section-e:   #eef2f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            font-size: 17px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Serif 4', Georgia, serif;
+            background: var(--off-white);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* ---- PROGRESS BAR ---- */
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--teal-deep), var(--clyde), var(--purple));
+            z-index: 300;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            background: linear-gradient(160deg, var(--navy) 0%, #002060 40%, #001540 100%);
+            padding: 80px 30px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Clyde swoosh — echoes NHSGGC without copying it */
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -10%;
+            width: 120%;
+            height: 120px;
+            background: var(--teal-light);
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+            opacity: 0.12;
+        }
+
+        .hero-inner {
+            max-width: 820px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-kicker {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-kicker::before {
+            content: '';
+            display: inline-block;
+            width: 32px;
+            height: 1px;
+            background: var(--teal-deep);
+        }
+
+        .hero-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 300;
+            color: var(--white);
+            letter-spacing: 0.02em;
+            line-height: 1.1;
+            margin-bottom: 0.3em;
+        }
+
+        .hero-title strong {
+            font-weight: 600;
+            color: var(--teal-light);
+        }
+
+        .hero-rule {
+            width: 60px;
+            height: 2px;
+            background: var(--clyde);
+            border: none;
+            margin: 24px 0;
+        }
+
+        .hero-subtitle {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.75);
+            max-width: 560px;
+            line-height: 1.65;
+            margin-bottom: 36px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .hero-tag {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--teal-light);
+            background: rgba(127,212,212,0.12);
+            border: 1px solid rgba(127,212,212,0.25);
+            padding: 6px 14px;
+            border-radius: 2px;
+        }
+
+        /* ---- NAV ---- */
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: var(--navy);
+            border-bottom: 2px solid var(--clyde);
+        }
+
+        .nav-inner {
+            max-width: 820px;
+            margin: 0 auto;
+            display: flex;
+            align-items: stretch;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .nav-inner::-webkit-scrollbar { display: none; }
+
+        .nav-brand {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--teal-light);
+            padding: 14px 20px;
+            white-space: nowrap;
+            letter-spacing: 0.08em;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            flex-shrink: 0;
+            text-transform: uppercase;
+        }
+
+        .nav-link {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.55);
+            padding: 14px 16px;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: color 0.2s, background 0.2s;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--teal-light);
+            background: rgba(127,212,212,0.08);
+        }
+
+        /* ---- MAIN ---- */
+        .main {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 24px 120px;
+        }
+
+        /* ---- ORIENTATION ---- */
+        .orientation {
+            margin-bottom: 64px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--mid-grey);
+        }
+
+        .orientation p {
+            font-size: 1.05rem;
+            color: var(--text-mid);
+            margin-bottom: 1.1em;
+            max-width: 680px;
+        }
+
+        .orientation p:first-child {
+            font-size: 1.15rem;
+            color: var(--text);
+        }
+
+        .how-to-use {
+            margin-top: 32px;
+            background: var(--section-a);
+            border-left: 3px solid var(--clyde);
+            padding: 24px 28px;
+        }
+
+        .how-to-use h3 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .how-to-use ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .how-to-use li {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.92rem;
+            color: var(--text-mid);
+            padding: 5px 0 5px 20px;
+            position: relative;
+        }
+
+        .how-to-use li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--clyde);
+            font-size: 0.85rem;
+        }
+
+        /* ---- SECTION BLOCKS ---- */
+        .theme-section {
+            margin-bottom: 48px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            cursor: pointer;
+            user-select: none;
+            border-radius: 2px 2px 0 0;
+            transition: filter 0.2s;
+        }
+
+        .section-header:hover { filter: brightness(0.96); }
+
+        .section-header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        .section-title-group { }
+
+        .section-number {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            opacity: 0.6;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        .section-count {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.55;
+        }
+
+        .section-toggle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            opacity: 0.5;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .theme-section.open .section-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Section colour themes */
+        .theme-a .section-header { background: #daeef8; color: var(--navy); }
+        .theme-a .section-icon { background: var(--clyde); color: white; }
+        .theme-b .section-header { background: #e8e0f4; color: var(--purple); }
+        .theme-b .section-icon { background: var(--purple); color: white; }
+        .theme-c .section-header { background: #d8eeea; color: #1a4a40; }
+        .theme-c .section-icon { background: var(--teal-deep); color: white; }
+        .theme-d .section-header { background: #fef0d8; color: #4a3000; }
+        .theme-d .section-icon { background: #d4860b; color: white; }
+        .theme-e .section-header { background: #e8eef5; color: var(--navy); }
+        .theme-e .section-icon { background: var(--navy); color: white; }
+
+        .section-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            border: 1px solid var(--mid-grey);
+            border-top: none;
+        }
+
+        .theme-section.open .section-body {
+            max-height: 8000px;
+        }
+
+        .section-body-inner {
+            padding: 4px 0 8px;
+        }
+
+        /* ---- SOURCE CARDS ---- */
+        .source-card {
+            margin: 0;
+            border-bottom: 1px solid var(--mid-grey);
+            background: var(--white);
+        }
+
+        .source-card:last-of-type {
+            border-bottom: none;
+        }
+
+        .source-card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 20px 24px 16px;
+            cursor: pointer;
+            gap: 16px;
+        }
+
+        .source-card-header:hover {
+            background: var(--off-white);
+        }
+
+        .source-card.open .source-card-header {
+            background: var(--off-white);
+        }
+
+        .source-card-left { flex: 1; }
+
+        .source-type {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--text-light);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .source-type .reading-time {
+            color: var(--clyde);
+            font-weight: 600;
+        }
+
+        .source-name {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.35;
+        }
+
+        .source-org {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-top: 3px;
+        }
+
+        .source-toggle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .source-card.open .source-toggle {
+            transform: rotate(45deg);
+        }
+
+        .source-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .source-card.open .source-body {
+            max-height: 2000px;
+        }
+
+        .source-content {
+            padding: 0 24px 24px;
+            border-top: 1px solid var(--light-grey);
+            padding-top: 20px;
+        }
+
+        .briefing {
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .source-link-row {
+            margin-bottom: 24px;
+        }
+
+        .source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--white);
+            background: var(--navy);
+            padding: 9px 18px;
+            text-decoration: none;
+            border-radius: 2px;
+            letter-spacing: 0.04em;
+            transition: background 0.2s;
+        }
+
+        .source-link:hover { background: var(--navy-mid); }
+
+        .source-link svg {
+            width: 13px;
+            height: 13px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+
+        .prompts-label {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--purple);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .prompts-label::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 1px;
+            background: var(--purple-light);
+        }
+
+        .prompts-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .prompts-list li {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 8px 0 8px 20px;
+            border-left: 2px solid var(--purple-light);
+            margin-bottom: 10px;
+            line-height: 1.55;
+        }
+
+        /* ---- SYNTHESIS QUESTIONS ---- */
+        .synthesis {
+            margin: 0;
+            padding: 24px 24px 24px 28px;
+            background: var(--navy);
+            border-left: 3px solid var(--teal);
+        }
+
+        .synthesis-label {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--teal);
+            margin-bottom: 10px;
+        }
+
+        .synthesis p {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-style: italic;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.65;
+        }
+
+        /* ---- JOURNAL SECTION ---- */
+        .journal-section {
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 2px solid var(--mid-grey);
+        }
+
+        .journal-section h2 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.7rem;
+            font-weight: 300;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .journal-section .intro {
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            max-width: 600px;
+            margin-bottom: 36px;
+            line-height: 1.7;
+        }
+
+        .journal-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .journal-card {
+            background: var(--white);
+            border: 1px solid var(--mid-grey);
+            padding: 28px;
+        }
+
+        .journal-week {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--clyde);
+            margin-bottom: 10px;
+        }
+
+        .journal-card h3 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 12px;
+            line-height: 1.35;
+        }
+
+        .journal-card p {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            line-height: 1.65;
+            margin-bottom: 12px;
+        }
+
+        .journal-card .word-count {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.72rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* ---- COLOPHON ---- */
+        .colophon {
+            margin-top: 80px;
+            padding: 32px 0;
+            border-top: 1px solid var(--mid-grey);
+            text-align: center;
+        }
+
+        .colophon p {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.78rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .colophon .orgs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .org-badge {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 6px 16px;
+            border-radius: 2px;
+        }
+
+        .org-badge.hscp {
+            background: var(--teal-light);
+            color: var(--purple);
+        }
+
+        .org-badge.nhs {
+            background: var(--navy);
+            color: white;
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 640px) {
+            html { font-size: 15px; }
+            .hero { padding: 50px 20px 70px; }
+            .main { padding: 40px 16px 80px; }
+            .journal-cards { grid-template-columns: 1fr; }
+            .section-header { padding: 16px 18px; }
+            .source-card-header { padding: 16px 18px 14px; }
+            .source-content { padding: 0 18px 20px; padding-top: 16px; }
+            .synthesis { padding: 20px 18px 20px 22px; }
+            .nav-brand { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+    <div class="hero-inner">
+        <p class="hero-kicker">Glasgow City HSCP · Addiction Medicine</p>
+        <h1 class="hero-title"><strong>High Stakes</strong></h1>
+        <hr class="hero-rule">
+        <p class="hero-subtitle">A companion to precarity, trauma, complexity and harm reduction for medical students on placement in addiction medicine, Glasgow.</p>
+        <div class="hero-meta">
+            <span class="hero-tag">Dip in anytime</span>
+            <span class="hero-tag">25 sources</span>
+            <span class="hero-tag">Designed for two weeks</span>
+        </div>
+    </div>
+</section>
+
+<!-- ============ NAV ============ -->
+<nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+        <span class="nav-brand">High Stakes</span>
+        <button class="nav-link" onclick="scrollTo('orientation')">Start Here</button>
+        <button class="nav-link" onclick="scrollTo('section-scale')">The Scale</button>
+        <button class="nav-link" onclick="scrollTo('section-services')">The Services</button>
+        <button class="nav-link" onclick="scrollTo('section-policy')">Policy</button>
+        <button class="nav-link" onclick="scrollTo('section-people')">The People</button>
+        <button class="nav-link" onclick="scrollTo('section-wider')">Wider Context</button>
+        <button class="nav-link" onclick="scrollTo('journal')">Journal</button>
+    </div>
+</nav>
+
+<!-- ============ MAIN ============ -->
+<main class="main">
+
+    <!-- ORIENTATION -->
+    <section class="orientation" id="orientation">
+        <p>You've arranged this placement yourself. That already puts you in a small minority. Most medical students will qualify without spending meaningful time in addiction medicine — and the evidence suggests that clinical contact without proper preparation and reflection can actually <em>increase</em> stigma rather than reduce it.</p>
+        <p>This resource exists to make sure that doesn't happen to you. Not by telling you what to think, but by giving you the materials and the questions to think with.</p>
+        <p>Glasgow is one of the most important places in the world right now for addiction medicine. Scotland has the highest drug-related death rate in Europe — around three times higher than any other country. The services you'll encounter here are pioneering, underfunded, sometimes world-leading, sometimes overstretched. The people who use them are navigating poverty, trauma, precarity and a healthcare system that has historically treated them as problems rather than patients.</p>
+        <p>Sit with that. Let it complicate things. That's the point.</p>
+
+        <div class="how-to-use">
+            <h3>How to use this resource</h3>
+            <ul>
+                <li>Each source has a briefing — read it before you follow the link so you know what you're looking for</li>
+                <li>The thought prompts are for after. Don't read them first or they'll pre-empt your response</li>
+                <li>You don't need to work through sections in order. Follow your curiosity</li>
+                <li>The journal prompts at the bottom are worth using. Writing clarifies. Portfolios need content. Future-you will be glad</li>
+                <li>Estimated reading times assume engaged, not rushed, reading. PDFs take longer than web pages</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 1: THE SCALE ============ -->
+    <div class="theme-section" id="section-scale">
+        <div class="section-header theme-a" onclick="toggleSection('section-scale')">
+            <div class="section-header-left">
+                <div class="section-icon">📊</div>
+                <div class="section-title-group">
+                    <span class="section-number">Section One</span>
+                    <span class="section-title">The Scale of the Problem</span>
+                </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+                <span class="section-count">3 sources</span>
+                <span class="section-toggle">+</span>
+            </div>
+        </div>
+        <div class="section-body">
+            <div class="section-body-inner">
+
+                <!-- SOURCE 1 -->
+                <div class="source-card" id="src-1">
+                    <div class="source-card-header" onclick="toggleCard('src-1')">
+                        <div class="source-card-left">
+                            <div class="source-type">PDF · RCPE Report <span class="reading-time">· ~40 min</span></div>
+                            <div class="source-name">Drug Deaths in Scotland: An Increasingly Medical Problem</div>
+                            <div class="source-org">Royal College of Physicians of Edinburgh, 2021</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">The RCPE's landmark report makes the case — explicitly, systematically — that Scotland's drug death crisis is a medical failure as much as a social one. Written by and for clinicians, it's the most important framing document for understanding what you're walking into. Pay particular attention to the sections on stigma within healthcare settings and the recommendations around safer consumption facilities, which were controversial when published and have since been partially vindicated by the opening of The Thistle.</p>
+                            <div class="source-link-row">
+                                <a href="https://www.rcpe.ac.uk/sites/default/files/drugs_deaths_in_scotland_report_final_0.pdf" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open PDF
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>The report frames this as a medical problem. What does that framing give you? What might it obscure?</li>
+                                <li>Think about a clinical encounter you've observed or been part of. Where did the attitudes described in the stigma sections show up — in language, in tone, in what was left unsaid?</li>
+                                <li>The RCPE endorsed safer consumption facilities before they existed in the UK. What does it mean for a professional body to get ahead of the law?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 2 -->
+                <div class="source-card" id="src-2">
+                    <div class="source-card-header" onclick="toggleCard('src-2')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · NHS <span class="reading-time">· ~10 min</span></div>
+                            <div class="source-name">NHSGGC — Reduction in Drug Related Deaths</div>
+                            <div class="source-org">NHS Greater Glasgow and Clyde</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">A public-facing overview from NHSGGC situating EDTS within the broader DRD reduction effort in Glasgow. Shorter and more accessible than the RCPE report — useful for understanding the institutional narrative around these services and how they're presented to the public and to commissioners. Notice the language used: what's foregrounded, what's minimised.</p>
+                            <div class="source-link-row">
+                                <a href="https://www.nhsggc.scot/nhs-greater-glasgow-and-clyde-welcomes-reduction-in-drug-related-deaths/" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Page
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>How does an NHS organisation talk about harm reduction publicly? What constraints shape that language?</li>
+                                <li>What's the relationship between the institutional narrative and what you've seen or heard from patients and staff on the ground?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 3 -->
+                <div class="source-card" id="src-3">
+                    <div class="source-card-header" onclick="toggleCard('src-3')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · Parliament <span class="reading-time">· ~30 min</span></div>
+                            <div class="source-name">Scottish Affairs Committee Report on Drug Deaths (2025)</div>
+                            <div class="source-org">UK Parliament</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">The Westminster committee report on Scotland's drug death crisis — which sits in a particular political and constitutional complexity, since drugs policy is reserved to Westminster while health and social care are devolved. The report is a useful primer on why Scotland can't simply replicate what other countries have done, and why The Thistle required a creative legal workaround rather than straightforward legislation. Don't need to read every word — the executive summary and recommendations are the essential sections.</p>
+                            <div class="source-link-row">
+                                <a href="https://publications.parliament.uk/pa/cm5901/cmselect/cmscotaf/630/report.html" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Report
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>The constitutional complexity here — devolved health, reserved drugs law — is unusual and consequential. How does working around legal constraints rather than changing them shape what's possible for services?</li>
+                                <li>Where does political will and clinical evidence align in this report? Where do they diverge?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /section-body-inner -->
+
+            <div class="synthesis">
+                <div class="synthesis-label">Section synthesis</div>
+                <p>Scotland has the highest drug-related death rate in Europe — not because Scottish people are more vulnerable to addiction, but because of specific failures of policy, provision and political will, compounded by deep structural poverty. After working through these sources: what do you now understand about the problem that you didn't when you arrived? And what questions does that open up that you still don't have answers to?</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ SECTION 2: THE SERVICES ============ -->
+    <div class="theme-section" id="section-services">
+        <div class="section-header theme-b" onclick="toggleSection('section-services')">
+            <div class="section-header-left">
+                <div class="section-icon">🏥</div>
+                <div class="section-title-group">
+                    <span class="section-number">Section Two</span>
+                    <span class="section-title">The Services</span>
+                </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+                <span class="section-count">7 sources</span>
+                <span class="section-toggle">+</span>
+            </div>
+        </div>
+        <div class="section-body">
+            <div class="section-body-inner">
+
+                <!-- SOURCE 4 -->
+                <div class="source-card" id="src-4">
+                    <div class="source-card-header" onclick="toggleCard('src-4')">
+                        <div class="source-card-left">
+                            <div class="source-type">PDF · Service Evaluation <span class="reading-time">· ~45 min</span></div>
+                            <div class="source-name">EDTS Evaluation Report (2023)</div>
+                            <div class="source-org">Glasgow HSCP & ADP</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">The full service evaluation of the Enhanced Drug Treatment Service — Glasgow's heroin-assisted treatment facility, the first in Scotland. This is rigorous, detailed and revelatory. Read it with an eye to what the evaluation actually measures and what the data shows about patient outcomes. The sections on patient experience are particularly important: this is what person-centred care looks like in practice for a population most of medicine treats as non-compliant.</p>
+                            <div class="source-link-row">
+                                <a href="https://www.stor.scot.nhs.uk/bitstreams/9749d97a-a99f-4db8-83bf-b37b0924ad52/download" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open PDF
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>Heroin-assisted treatment remains deeply controversial. What would you say to a colleague who finds the concept ethically troubling?</li>
+                                <li>What does "treatment success" mean for this service? How does that differ from what you were taught to measure as success?</li>
+                                <li>The evaluation describes patients who had failed multiple previous treatment attempts. What does that tell you about the relationship between treatment design and treatment engagement?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 5 -->
+                <div class="source-card" id="src-5">
+                    <div class="source-card-header" onclick="toggleCard('src-5')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · HRA <span class="reading-time">· ~15 min</span></div>
+                            <div class="source-name">Implementation Science Evaluation — Glasgow HAT Facility</div>
+                            <div class="source-org">Health Research Authority</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">The independent implementation science evaluation of the HAT model within EDTS. Shorter than the full evaluation — good for understanding the research framework around HAT and why implementation science matters for novel services in contested political environments. The methodology section is worth reading carefully: how do you evaluate something that's simultaneously a service and an experiment?</p>
+                            <div class="source-link-row">
+                                <a href="https://www.hra.nhs.uk/planning-and-improving-research/application-summaries/research-summaries/implementation-science-evaluation-of-the-glasgow-hat-facility/" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Page
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>What are the ethical tensions in running a research evaluation on a service that people depend on for survival?</li>
+                                <li>How does the language of implementation science shape how we think about what these services are for?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 6 -->
+                <div class="source-card" id="src-6">
+                    <div class="source-card-header" onclick="toggleCard('src-6')">
+                        <div class="source-card-left">
+                            <div class="source-type">PDF · SDF Presentation <span class="reading-time">· ~20 min</span></div>
+                            <div class="source-name">The Thistle: Glasgow's Safer Drug Consumption Facility</div>
+                            <div class="source-org">Scottish Drugs Forum, 2025</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">A detailed presentation by the people who designed and run The Thistle — Lynn MacDonald and Dan Daly from Glasgow HSCP. This is primary source material: the vision, the staffing model, the legal framework, the operational realities. If you visit The Thistle during your placement, read this beforehand. It will transform what you see.</p>
+                            <div class="source-link-row">
+                                <a href="https://sdf.org.uk/wp-content/uploads/2025/09/The-Thistle-Glasgows-Safer-Drug-Consumption-Facility-Lynn-MacDonald-Dan-Daly-Glasgow-HSCP.pdf" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open PDF
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>The Thistle required the Lord Advocate's intervention to operate legally. What does it mean that clinical best practice required a legal workaround?</li>
+                                <li>The staffing model includes people with lived experience alongside clinical staff. How does that change the therapeutic environment?</li>
+                                <li>The service operates on a harm reduction rather than abstinence model. Where does that sit with your own instincts about what healthcare is for?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 7 -->
+                <div class="source-card" id="src-7">
+                    <div class="source-card-header" onclick="toggleCard('src-7')">
+                        <div class="source-card-left">
+                            <div class="source-type">PDF · Conference <span class="reading-time">· ~15 min</span></div>
+                            <div class="source-name">The Thistle — DRD Trends and Legal Context</div>
+                            <div class="source-org">IMS/LJMU Public Health Conference, 2025</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">Conference presentation slides with DRD trend data and the legal framework around The Thistle. More data-dense than the SDF presentation — useful for understanding the epidemiological context and the specific evidence base that justified opening the service. The DRD trend visualisations are striking.</p>
+                            <div class="source-link-row">
+                                <a href="https://ims.ljmu.ac.uk/PublicHealth/DRDevent2025/docs/06-Lynn-and-Dan-The-Thistle-service.pdf" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open PDF
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>What's the relationship between epidemiological evidence and political will? Does good data automatically produce good policy?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 8 -->
+                <div class="source-card" id="src-8">
+                    <div class="source-card-header" onclick="toggleCard('src-8')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · HSCP <span class="reading-time">· ~10 min</span></div>
+                            <div class="source-name">The Thistle — Main Service Page</div>
+                            <div class="source-org">Glasgow City HSCP</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">The public-facing service description: what The Thistle is, who it's for, when it's open, what happens there. Read this before the more detailed documents to orient yourself. Notice what's included in a public description aimed at prospective service users and what's absent.</p>
+                            <div class="source-link-row">
+                                <a href="https://glasgowcity.hscp.scot/sdcf" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Page
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>How does this service describe itself to the people who use it? What tone does it strike, and what does that tell you about how it conceptualises the people it serves?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 9 -->
+                <div class="source-card" id="src-9">
+                    <div class="source-card-header" onclick="toggleCard('src-9')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · Pharmaceutical Journal <span class="reading-time">· ~10 min</span></div>
+                            <div class="source-name">UK's First SDCF — Early Data (Jan–Apr 2025)</div>
+                            <div class="source-org">The Pharmaceutical Journal</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">Usage statistics and clinical emergency data from The Thistle's first four months of operation. The numbers are the beginning of an evidence base that will matter enormously for the political argument about expanding these services across the UK. Read it alongside the INPUD section's materials — data about a service is not the same as knowledge of what it means to the people who use it.</p>
+                            <div class="source-link-row">
+                                <a href="https://pharmaceutical-journal.com/article/news/uks-first-safer-drug-consumption-facility-accessed-more-than-2500-times-in-first-four-months-data-show" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Article
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>What counts as evidence of success for a service like this? Who gets to define that?</li>
+                                <li>The article reports clinical emergencies managed within the facility. What's the significance of those interventions happening there rather than in A&E?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 10 -->
+                <div class="source-card" id="src-10">
+                    <div class="source-card-header" onclick="toggleCard('src-10')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · HSCP <span class="reading-time">· ~15 min</span></div>
+                            <div class="source-name">Complex Needs Service — Glasgow HSCP</div>
+                            <div class="source-org">Glasgow City HSCP, 2022</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">Full description of the Complex Needs Service launched in 2022 — staffing model, risk framework, the specific patient group it targets. This service sits alongside EDTS and The Thistle as part of Glasgow's ecosystem of provision for people with the most complex presentations. Understanding the boundaries between services is as important as understanding the services themselves.</p>
+                            <div class="source-link-row">
+                                <a href="https://glasgowcity.hscp.scot/news/hscp-complex-needs-service-launched-glasgow" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Page
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>The "complex needs" framing locates complexity in the patient. Where else might we locate complexity — in the system, in society, in the history?</li>
+                                <li>How do services with different thresholds and models coordinate around shared patients?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /section-body-inner -->
+
+            <div class="synthesis">
+                <div class="synthesis-label">Section synthesis</div>
+                <p>You've now read about three distinct services — EDTS, The Thistle, the Complex Needs Service — each operating differently, each with a different model of care and a different relationship to abstinence, substitution and harm reduction. What's the underlying philosophy that connects them? And where do you see tensions within that philosophy in how they actually operate?</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ SECTION 3: POLICY ARCHITECTURE ============ -->
+    <div class="theme-section" id="section-policy">
+        <div class="section-header theme-c" onclick="toggleSection('section-policy')">
+            <div class="section-header-left">
+                <div class="section-icon">📋</div>
+                <div class="section-title-group">
+                    <span class="section-number">Section Three</span>
+                    <span class="section-title">The Policy Architecture</span>
+                </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+                <span class="section-count">4 sources</span>
+                <span class="section-toggle">+</span>
+            </div>
+        </div>
+        <div class="section-body">
+            <div class="section-body-inner">
+
+                <!-- SOURCE 11 -->
+                <div class="source-card" id="src-11">
+                    <div class="source-card-header" onclick="toggleCard('src-11')">
+                        <div class="source-card-left">
+                            <div class="source-type">PDF · Scottish Government <span class="reading-time">· ~50 min</span></div>
+                            <div class="source-name">MAT Standards for Scotland: Access, Choice, Support</div>
+                            <div class="source-org">Scottish Government / Drug Deaths Taskforce, 2021</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">The founding document of the MAT Standards — ten standards for medication-assisted treatment developed through extensive co-production with people with lived experience, clinicians, and service providers. This is the framework that governs what good treatment looks like in Scotland. Standard 1 (same-day access to treatment) is the one most likely to be visible during your placement. Read the introduction and standards 1–5 in detail; the rest can be dipped into as relevant.</p>
+                            <div class="source-link-row">
+                                <a href="https://www.gov.scot/binaries/content/documents/govscot/publications/independent-report/2021/05/medication-assisted-treatment-mat-standards-scotland-access-choice-support/documents/medication-assisted-treatment-mat-standards-scotland-access-choice-support/medication-assisted-treatment-mat-standards-scotland-access-choice-support/govscot:document/medication-assisted-treatment-mat-standards-scotland-access-choice-support.pdf" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open PDF
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>Standard 1 is same-day access to treatment. Think about the services you've encountered: is this happening? What are the barriers when it isn't?</li>
+                                <li>The standards were developed with people with lived experience. What difference does that make to the document — in tone, in content, in what it prioritises?</li>
+                                <li>A rights-based approach to addiction treatment is not the default in most of the UK. What would it require to make it the default?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 12 -->
+                <div class="source-card" id="src-12">
+                    <div class="source-card-header" onclick="toggleCard('src-12')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · Public Health Scotland <span class="reading-time">· ~20 min</span></div>
+                            <div class="source-name">MAT Standards Benchmarking Report 2024/25</div>
+                            <div class="source-org">Public Health Scotland</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">The most recent assessment of how Scotland is actually implementing the MAT Standards across all 29 Alcohol and Drug Partnership areas. Implementation has improved significantly since 2021 but remains patchy, particularly for standards 6–10. The interactive maps showing variation by ADP area are particularly telling. This year's report has a specific focus on human rights.</p>
+                            <div class="source-link-row">
+                                <a href="https://publichealthscotland.scot/publications/national-benchmarking-report-on-implementation-of-the-medication-assisted-treatment-mat-standards/national-benchmarking-report-on-the-implementation-of-the-medication-assisted-treatment-mat-standards-scotland-202425/" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Report
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>Where does Glasgow sit in relation to the national picture? What local factors explain that position?</li>
+                                <li>The gap between policy aspiration and implementation is a persistent feature of NHS change. What does closing that gap actually require?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 13 -->
+                <div class="source-card" id="src-13">
+                    <div class="source-card-header" onclick="toggleCard('src-13')">
+                        <div class="source-card-left">
+                            <div class="source-type">PDF · Clinical Guidelines <span class="reading-time">· Reference document</span></div>
+                            <div class="source-name">ADRS Prescribing Guidelines — MAT / OST (2023)</div>
+                            <div class="source-org">Community Pharmacy Scotland / NHS</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">The comprehensive clinical prescribing standards for opioid substitution and MAT in Scotland. This is a reference document rather than a cover-to-cover read — use it to look up specific medications, dosing frameworks, or clinical scenarios you encounter during the placement. The sections on buprenorphine and methadone are the most immediately useful. The introductory sections on the philosophy of OST are worth reading in full.</p>
+                            <div class="source-link-row">
+                                <a href="https://www.communitypharmacy.scot.nhs.uk/media/8605/ost-guidelines-for-medication-assisted-treatment-v12-jun-23.pdf" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open PDF
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading (introductory sections)</div>
+                            <ul class="prompts-list">
+                                <li>OST is a long-term treatment — often lifelong. How does that challenge assumptions about what treatment is for?</li>
+                                <li>What do the prescribing guidelines reveal about the relationship between clinical evidence and clinical culture?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 14 -->
+                <div class="source-card" id="src-14">
+                    <div class="source-card-header" onclick="toggleCard('src-14')">
+                        <div class="source-card-left">
+                            <div class="source-type">PDF · Operational Guidance <span class="reading-time">· ~30 min</span></div>
+                            <div class="source-name">ADRS Staff Guidance — Addressing Missingness (2025)</div>
+                            <div class="source-org">University of Glasgow / NHS</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">"Missingness" — when patients disengage, stop attending, can't be contacted. This guidance for ADRS staff is one of the most grounded, clinically thoughtful documents on the list. It deals with a reality that other guidance often skirts: what do you do when someone disappears? The framing is explicitly about risk, but also about relationship, about the therapeutic meaning of a missed appointment. Useful for thinking about what good practice looks like in a field where "non-compliance" is a structural feature rather than a personal failing.</p>
+                            <div class="source-link-row">
+                                <a href="https://www.gla.ac.uk/media/Media_1217492_smxx.pdf" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open PDF
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>How does the concept of "missingness" reframe what we usually call "non-attendance" or "did not attend"? Why does that reframing matter clinically?</li>
+                                <li>What would need to change in how services are designed and staffed to make proactive engagement with missingness the norm?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /section-body-inner -->
+
+            <div class="synthesis">
+                <div class="synthesis-label">Section synthesis</div>
+                <p>Policy frameworks and clinical guidelines exist in a constant tension with operational reality. After working through these sources: where do you see that tension playing out in the services you've encountered? And what does it tell you about what systemic change in healthcare actually requires — beyond writing better guidelines?</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ SECTION 4: THE PEOPLE ============ -->
+    <div class="theme-section" id="section-people">
+        <div class="section-header theme-d" onclick="toggleSection('section-people')">
+            <div class="section-header-left">
+                <div class="section-icon">🫂</div>
+                <div class="section-title-group">
+                    <span class="section-number">Section Four</span>
+                    <span class="section-title">The People</span>
+                </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+                <span class="section-count">4 sources</span>
+                <span class="section-toggle">+</span>
+            </div>
+        </div>
+        <div class="section-body">
+            <div class="section-body-inner">
+
+                <!-- SOURCE 15 -->
+                <div class="source-card" id="src-15">
+                    <div class="source-card-header" onclick="toggleCard('src-15')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · INPUD <span class="reading-time">· ~25 min</span></div>
+                            <div class="source-name">INPUD Consensus Statement on Drug Use Under Prohibition</div>
+                            <div class="source-org">International Network of People who Use Drugs, 2015</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">INPUD is the global peer-based organisation of people who use drugs. This Consensus Statement — developed through consultations with 24 drug user organisations from 28 countries — sets out in plain language what people who use drugs demand in terms of rights, health, and dignity. It is not written for clinicians. That's precisely why you should read it. Most of what you've read on this list describes people who use drugs from the outside; this is from the inside. It may challenge some of your assumptions. Let it.</p>
+                            <div class="source-link-row">
+                                <a href="https://inpud.net/inpud-consensus-statement-on-drug-use-under-prohibition-health-human-rights-and-the-law/" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Page
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>INPUD asserts that people who use drugs are not the problem — they are part of the solution. What would healthcare that genuinely believed that look like?</li>
+                                <li>Some of the demands in this document are politically radical. Which ones do you find most challenging, and why?</li>
+                                <li>How does reading this change how you think about the clinical encounters you've had during this placement?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 16 -->
+                <div class="source-card" id="src-16">
+                    <div class="source-card-header" onclick="toggleCard('src-16')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · International <span class="reading-time">· ~10 min</span></div>
+                            <div class="source-name">INHSU — International Commentary on The Thistle</div>
+                            <div class="source-org">International Network on Hepatitis in Substance Users</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">International harm reduction specialists and researchers respond to the opening of The Thistle. Useful for placing what you're seeing in Glasgow within global context — there are over 130 SDCFs operating internationally, and the evidence base from those services is what underpinned the case for The Thistle. Glasgow is not doing something unprecedented globally; it is doing something unprecedented in the UK.</p>
+                            <div class="source-link-row">
+                                <a href="https://www.inhsu.org/news/glasgow-opens-the-uks-first-safer-drug-consumption-facility/" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Page
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>The international evidence for SDCFs is substantial. Why has the UK been so slow to act on it? What does that tell you about how evidence functions in health policy?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 17 -->
+                <div class="source-card" id="src-17">
+                    <div class="source-card-header" onclick="toggleCard('src-17')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · SDF <span class="reading-time">· ~10 min</span></div>
+                            <div class="source-name">EDTS Opens and Begins Prescribing</div>
+                            <div class="source-org">Scottish Drugs Forum</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">SDF's account of the early operational days of EDTS — the rationale, the first patients, the community response. A shorter, more narrative account than the formal evaluation, and valuable for that reason. The Scottish Drugs Forum occupies an interesting position: a third-sector organisation with significant clinical and policy influence.</p>
+                            <div class="source-link-row">
+                                <a href="https://sdf.org.uk/glasgows-new-enhanced-drug-treatment-service-opens-doors-and-begins-prescribing/" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Page
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>What's the role of third-sector organisations in shaping services that the NHS then delivers? Is that a strength or a vulnerability?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 18 -->
+                <div class="source-card" id="src-18">
+                    <div class="source-card-header" onclick="toggleCard('src-18')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · Glasgow City Council <span class="reading-time">· ~10 min</span></div>
+                            <div class="source-name">Supporting People Experiencing Alcohol and Drug Harms — Peer Recovery</div>
+                            <div class="source-org">Glasgow City Council</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">An overview of Glasgow's three commissioned peer-led recovery communities: NERC, NWRC, and SCRN. Peer support is not an add-on to addiction treatment in Glasgow — it's structurally embedded. These organisations employ people with lived experience as outreach workers and recovery navigators. Understanding this infrastructure helps make sense of conversations you may have had with patients about where they go when they leave the clinical space.</p>
+                            <div class="source-link-row">
+                                <a href="https://www.glasgow.gov.uk/article/13099/Supporting-people-experiencing-alcohol-and-drug-harms" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Page
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>Peer recovery support employs people whose expertise comes from lived experience. How does that redefine what counts as clinical expertise?</li>
+                                <li>What do these organisations provide that clinical services structurally cannot?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /section-body-inner -->
+
+            <div class="synthesis">
+                <div class="synthesis-label">Section synthesis</div>
+                <p>The gap between how services describe the people they serve and how those people describe themselves is one of the defining tensions in this field. After reading the INPUD Consensus Statement alongside the service descriptions: where do you hear that gap most clearly? And what would it take to close it — not just in policy language, but in the room, between a clinician and a patient?</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ SECTION 5: WIDER CONTEXT ============ -->
+    <div class="theme-section" id="section-wider">
+        <div class="section-header theme-e" onclick="toggleSection('section-wider')">
+            <div class="section-header-left">
+                <div class="section-icon">🗺️</div>
+                <div class="section-title-group">
+                    <span class="section-number">Section Five</span>
+                    <span class="section-title">Wider Context</span>
+                </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+                <span class="section-count">5 sources</span>
+                <span class="section-toggle">+</span>
+            </div>
+        </div>
+        <div class="section-body">
+            <div class="section-body-inner">
+
+                <!-- SOURCE 19 -->
+                <div class="source-card" id="src-19">
+                    <div class="source-card-header" onclick="toggleCard('src-19')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · NHSGGC <span class="reading-time">· ~10 min</span></div>
+                            <div class="source-name">Alcohol and Drug Recovery Services — Overview</div>
+                            <div class="source-org">NHS Greater Glasgow and Clyde</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">The broad NHS overview of ADRS treatment pathways. Use this to understand the full landscape of provision within which the specialist services sit — from initial assessment through to structured treatment, community support and recovery. Useful for understanding where a patient you meet sits within the wider system.</p>
+                            <div class="source-link-row">
+                                <a href="https://www.nhsggc.scot/your-health/right-care-right-place/addictions/" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Page
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>How does the system as described on paper map onto the system as you've experienced it? Where are the gaps?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 20 -->
+                <div class="source-card" id="src-20">
+                    <div class="source-card-header" onclick="toggleCard('src-20')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · Glasgow City Council <span class="reading-time">· ~10 min</span></div>
+                            <div class="source-name">Glasgow Alcohol and Drug Services (GADRS)</div>
+                            <div class="source-org">Glasgow City Council</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">Local authority structure, referral pathways, and service access — the council side of a system that straddles NHS and local government. The integration of health and social care in Glasgow is both a strength (joined-up commissioning, shared records) and a complexity (two different cultures, two different accountability frameworks). Understanding both sides is necessary for understanding why services are structured the way they are.</p>
+                            <div class="source-link-row">
+                                <a href="https://www.glasgow.gov.uk/article/4593/Glasgow-Alcohol-and-Drug-Services-GADRS" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Page
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>What are the advantages and disadvantages of health and social care integration for patients using addiction services?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 21 -->
+                <div class="source-card" id="src-21">
+                    <div class="source-card-header" onclick="toggleCard('src-21')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · Glasgow City Council <span class="reading-time">· ~5 min</span></div>
+                            <div class="source-name">Scotland's First HAT Facility — Launch (2019)</div>
+                            <div class="source-org">Glasgow City Council</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">The official launch announcement for EDTS in 2019. Short, worth reading alongside the 2023 evaluation to see how the ambitions of the launch compare to what the evaluation actually found. Notice how political language differs from clinical language even when describing the same service.</p>
+                            <div class="source-link-row">
+                                <a href="https://www.glasgow.gov.uk/article/3055/Scotland-s-First-Heroin-Assisted-Treatment-Unveiled" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Page
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>Compare the language here to the EDTS evaluation. What gets said at a launch that doesn't survive contact with operational reality?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 22 -->
+                <div class="source-card" id="src-22">
+                    <div class="source-card-header" onclick="toggleCard('src-22')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · Glasgow City Council <span class="reading-time">· ~5 min</span></div>
+                            <div class="source-name">Glasgow Opens UK's First Safer Drug Consumption Facility</div>
+                            <div class="source-org">Glasgow City Council, 2025</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">The launch announcement for The Thistle — useful for tracking how this service positioned itself publicly at opening, and for understanding how local government frames harm reduction politically. Read in conjunction with the early usage data from The Pharmaceutical Journal. Notice what language becomes available in an official announcement, and what remains unspeakable — including, in some official titles, the word "drug" itself.</p>
+                            <div class="source-link-row">
+                                <a href="https://www.glasgow.gov.uk/article/11760/Glasgow-opens-UK-s-first-safer-drug-consumption-facility" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Page
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>Both EDTS and The Thistle were launched with significant political fanfare. What sustains a service after the fanfare fades?</li>
+                                <li>Language shapes perception. How does the language institutions use to describe these services affect public understanding — and patient dignity?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE 23 -->
+                <div class="source-card" id="src-23">
+                    <div class="source-card-header" onclick="toggleCard('src-23')">
+                        <div class="source-card-left">
+                            <div class="source-type">Web · NHS Inform <span class="reading-time">· ~5 min</span></div>
+                            <div class="source-name">South Glasgow ADRS — Service Directory</div>
+                            <div class="source-org">NHS Inform</div>
+                        </div>
+                        <span class="source-toggle">+</span>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-content">
+                            <p class="briefing">The public listing for South Glasgow ADRS — the practical, patient-facing version of the service. Contact details, opening hours, what to expect. A useful reminder that behind every policy framework and evaluation report is a phone number someone has to ring, an address someone has to get to. The gap between the service as described in clinical documents and the service as experienced by a person in crisis is worth holding in mind throughout this placement.</p>
+                            <div class="source-link-row">
+                                <a href="https://www.nhsinform.scot/scotlands-service-directory/health-and-wellbeing-services/10149%201glc1116" target="_blank" rel="noopener" class="source-link">
+                                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Open Page
+                                </a>
+                            </div>
+                            <div class="prompts-label">After reading</div>
+                            <ul class="prompts-list">
+                                <li>Imagine trying to access this service in crisis, with chaotic housing, no data on your phone, and a history of negative encounters with health services. What are the barriers?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div><!-- /section-body-inner -->
+
+            <div class="synthesis">
+                <div class="synthesis-label">Section synthesis</div>
+                <p>Glasgow's addiction medicine landscape is a patchwork of NHS services, local authority provision, third-sector organisations, and peer networks — all operating on different legal and funding frameworks, with different cultures and different ideas about what they're for. After two weeks of placement: what does coordination look like in practice? And what falls through the gaps?</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ JOURNAL ============ -->
+    <section class="journal-section" id="journal">
+        <h2>Placement journal prompts</h2>
+        <p class="intro">These prompts are designed to produce writing that's useful — for portfolio entries, for future applications, for your own thinking. Aim for 200–300 words each. The discipline of writing produces clarity that thinking alone doesn't.</p>
+
+        <div class="journal-cards">
+            <div class="journal-card">
+                <div class="journal-week">End of Week One</div>
+                <h3>What have you seen that you didn't expect?</h3>
+                <p>Describe a specific encounter, observation, or conversation from your first week — something that didn't fit the mental model you arrived with. What assumption did it challenge? What question did it open up? Don't try to resolve the question. Sit with it.</p>
+                <p class="word-count">Aim for 200–300 words</p>
+            </div>
+            <div class="journal-card">
+                <div class="journal-week">End of Week Two</div>
+                <h3>What will you carry into your practice?</h3>
+                <p>You'll work with patients who use drugs throughout your career, in almost any specialty. What has this placement changed about how you'll approach those encounters? Be specific. Avoid abstractions like "I'll be more empathetic" — what will you actually do differently, and why?</p>
+                <p class="word-count">Aim for 200–300 words</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLOPHON -->
+    <div class="colophon">
+        <p>Produced for medical students on elective placement in addiction medicine, Glasgow.<br>
+        Sources current as of March 2026. Links are to original sources and may change.</p>
+        <div class="orgs">
+            <span class="org-badge hscp">Glasgow City HSCP</span>
+            <span class="org-badge nhs">NHS Greater Glasgow &amp; Clyde</span>
+        </div>
+    </div>
+
+</main>
+
+<script>
+    // Section toggle
+    function toggleSection(id) {
+        const section = document.getElementById(id);
+        section.classList.toggle('open');
+    }
+
+    // Source card toggle
+    function toggleCard(id) {
+        const card = document.getElementById(id);
+        card.classList.toggle('open');
+    }
+
+    // Nav scroll
+    function scrollTo(id) {
+        const el = document.getElementById(id);
+        if (el) {
+            const offset = el.getBoundingClientRect().top + window.scrollY - 60;
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+        }
+    }
+
+    // Progress bar
+    function updateProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        document.getElementById('progressBar').style.width = progress + '%';
+    }
+
+    // Active nav
+    function updateActiveNav() {
+        const sections = [
+            'orientation', 'section-scale', 'section-services',
+            'section-policy', 'section-people', 'section-wider', 'journal'
+        ];
+        const navLinks = document.querySelectorAll('.nav-link');
+        let current = '';
+
+        sections.forEach(id => {
+            const el = document.getElementById(id);
+            if (el && window.scrollY >= el.offsetTop - 100) {
+                current = id;
+            }
+        });
+
+        navLinks.forEach((link, i) => {
+            link.classList.remove('active');
+            const targets = ['orientation', 'section-scale', 'section-services',
+                             'section-policy', 'section-people', 'section-wider', 'journal'];
+            if (targets[i] === current) link.classList.add('active');
+        });
+    }
+
+    // Fade in sections on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll('.theme-section, .journal-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(16px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(el);
+    });
+
+    window.addEventListener('scroll', () => {
+        updateProgress();
+        updateActiveNav();
+    }, { passive: true });
+</script>
+
+</body>
+</html>
